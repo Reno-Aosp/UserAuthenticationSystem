@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 50px auto; }
+        .user-info { background: #f0f0f0; padding: 20px; border-radius: 8px; }
+        .info-row { margin: 10px 0; }
+        button { padding: 10px 20px; background: #dc3545; color: white; border: none; cursor: pointer; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Welcome to Main Page</h2>
+    
+    <div class="user-info">
+        <h3>User Information</h3>
+        <div class="info-row">
+            <strong>Name:</strong> <span th:text="${user.name}"></span>
+        </div>
+        <div class="info-row">
+            <strong>Phone:</strong> <span th:text="${user.phone}"></span>
+        </div>
+        <div class="info-row">
+            <strong>Address:</strong> <span th:text="${user.address}"></span>
+        </div>
+    </div>
+    
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
